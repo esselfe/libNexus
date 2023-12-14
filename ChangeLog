@@ -32,3 +32,4 @@
 		use the lib. The Nexus program actually exploits this lib like any project
 		would. (24/10/2009)
 0.0.3.3 Trying to apply libNexus to some projects (testGame,inventory)
+0.1.0 (23/12/14) Fix build on recent (2023) systems
