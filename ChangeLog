@@ -1,0 +1,34 @@
+0.0.0.6: menuing working (still a bit buggy) :)
+0.0.0.7: wrote editor mesh saving and loading from file :)
+0.0.0.8: added selection box feature and plane adding function
+	(the mesh loading is buggy with more than one plane in the mesh...)
+0.0.0.9: fixed buggy mesh loading and wrote the multiple planed mesh handling
+0.0.1.0 (09/05/11): major changes in mesh.c. Meshes now belong to a scene and scenes belong
+	to worlds...
+0.0.1.1 Rewrote some menuing, there is now a mode per floor (added 3 floor)
+0.0.1.4 Wrote configuration file handling
+0.0.1.5 Fixed incomplete mesh loading.
+		Started writing mesh point hovering, still incomplete...
+0.0.1.6 Changed the directory structure: put source code in 'src', 
+		the building command becomes 'make -C src'.
+0.0.1.7 Added usage of 'needRedraw' flag in the rendering function. 
+		This way the CPU usage drops alot :).
+0.0.1.8 Removed all dirty code
+0.0.1.9 Some more cleanup... now using recursive makefiles, and oh, the most
+		interesting: the program recompiles and restart itself by typing
+		'rebuild' at the hud prompt :) And I introduced a new generic type,
+		objects.h::struct Object. This way everything will be linked together.
+		I also moved all header specific data type defs to Ntype.h. I want to
+		keep this file sorted alphabetically by header provenance name.
+0.0.2.4 Nexus CPU usage dropped from 100% to 6-20%. Also wrote handling code
+		for the keyboard repeat state using the glutWindowStatusFunc() callback.
+0.0.2.12 Yes I broke the keyboard repeat thing! (key repeat is off once Nexus
+		quit. Using libsensors from its header instead of from system(). The 
+		threading seems enlightned this way and updates the hud clock properly.
+		oh and I screwed the usage, now uses 100%. The program now responds
+		to process signals (SIGINT and SIGTERM). Wrote the selectID dynamic
+		tree. Put the camera handling function as a thread.
+0.0.3.0 Now gathering generic functions in libNexus so independant modules can
+		use the lib. The Nexus program actually exploits this lib like any project
+		would. (24/10/2009)
+0.0.3.3 Trying to apply libNexus to some projects (testGame,inventory)

@@ -1,0 +1,58 @@
+Nexus is a 3 dimensional object_engine written with GLUT and openGL libs.
+When I began developing the program, I had in mind system control and monitoring,
+with 3-dimensional generic objects representing virtually any variables and any
+function's actions.
+
+I realized Nexus could do much more than that, like objects editing and game rendering,
+so I put all generic code in libNexus. External program use libNexus simply by
+calling NLinit() and the engine will read the objects from the program's home
+configuration directory (~/.{nexus,testGame,inventory,...}).
+
+In the source directory there's the Nexus engine (libNexus)
+and some project examples made from that lib (nexus, testGame, inventory)
+
+Note that the lib is still is an alpha stage and may contain incomplete code,
+thus resulting in some bugs, sorry, there's so many things I don't want to forget!
+
+
+/* ***************** */
+/* About the Nexus library, generic object engine */
+/* ***************** */
+The library libNexus.so gathers functions that operate on user-defined objects.
+Objects are like a robot being drawn. Some objects will contain other objects.
+Objects are defined in the source code as having a type (Plane,cube,text,mesh).
+An object can be tought of a reference being searched, altered, redefined by
+binary-tree searching functions that will act according to the object reference type.
+2D and 3D objects will be rendered accordingly.
+Actually, the rendering function draws all objects found in the program's objectList.
+Edition on the objects meshes can also be introduced in any project.
+All project should have a scene and a floor to represent objects forming the project.
+
+
+/* ****************** */
+/* About Nexus */
+/* ****************** */
+The user is allowed to have a look at: 
+	- RAM, swap and system loads usage (Planned for every users and daemons...)
+Currently I _will try_ to provide and gather common security functions such as:
+	- filesystem browsing and editing (TODO)
+	- firewall control	(TODO)
+	- ip connection tracking, `cat /proc/net/ip_conntrack`	(TODO)
+	- (netstat -an |less)-like port monitoring	(TODO)
+	- (strace -e trace=open,read program |tee program.trace) for disk access logging... (TODO)
+	- access to `ps -e` or `ps -aux` like information	(TODO)
+
+
+
+Note:
+	- The program cannot detect whether it's installed or not yet,
+		so install from the sources first as Nexus will need its 
+		config and mesh files. Remember to run ldconfig for libNexus.so
+
+To compile and install Nexus, type:
+	- 'make -B' to compile;
+	- 'make install' to install the executable (/usr/local/bin) and the program's files (/root/.nexus)
+	- 'make uninstall' will remove all files created on the system from installation.
+
+If you wish to comment, share ideas or think you can add features (by patching the code),
+reach me at esselfe16@gmail.com Enjoy :)

@@ -1,0 +1,2 @@
+
+void getargs (int opt);

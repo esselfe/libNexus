@@ -1,0 +1,47 @@
+updated: 2009-05-24
+
+********************************
+General
+- draw some sheet to put file content, system information on.
+	-> manageable structures so sheet navigation can be performed.
+	-> right-click contextual menu on picked definable && defined 
+	   objects for extended manips
+- Mesh saving/loading vai files (with hand made format definition? 
+	since I can't have 	the specs for the existing popular file formats.
+
+********************************
+Just in case I have too many ideas at once...
+- write a tree for dynamic selectID allocations and make use of it in 
+	init(), add(), load(), save() objects and menu functions.
+- check performance, there are lags on my system...(P#/733Mhz): timer precision, 
+	CPU usage lowering-strategy like usleep call in loops, drawing, updates.
+- try to name the threads processes' names (as shown in `ps`).
+- handle different region on the floor (an area of 10x10 show the editor) so
+	many modes can be shown at once.
+- handle many floors, like a building.
+- complete saveState() and add 'autoSaveStateRecoverPassword = 1' in the config file.
+- write encodeString() / decodeString() in util.c to remove readable/modifiable
+	strings in the executable image. To be used on the fly on premade strings.
+- write log handling and config settings
+- look for 'lock' bugs like ctrl-c that make the file disappear 
+	(bad design by using system(), should use tar and gzip libs). sry the bz2 api
+	is too complicated to me, I just don't feel trial-error as I don't have an
+	internet connection to read proper doc... and I don't seem to have the gzip headers...
+
+State handling:
+- Selection of state files. Requires browser...
+- Use a special state file containing keyword and their values AND a binary one.
+	The first one should be used from a command line argument to this program,
+	so the user can choose exactly how the program starts. All program variables
+	should be present.
+
+Memory mode:
+We need to know exactly what the file symbols are and what they do...
+	- Memory block objects handling (updates and code parsing)
+		-> [+ associated switch (keyword) { cases funcs } within hardcoded structs ?])
+		-> have a thread handle that all alone?
+	- Implies disassembly virtual deployment from previous analysis.
+		-> recompiling / relinking (ld) too?
+	- Memory block navig and zooming.
+
+

@@ -1,0 +1,24 @@
+
+One idea about a Nexus concept (objectivity)
+
+Every object in the program comes from a definition.
+They all can be isolated for linked_info deployment on them,
+which implies a lot of generacity among different object
+manip handlers.
+
+	Info about the object consists of a contextual_menu like
+	set of choices available for that particular object.
+	
+
+	Enabling the mesh editor inserts new manipulations on the
+	object's mesh.
+	Enabling the text editor will add text manips.
+
+The browser mode should (todo) handle objects like files, meshes,
+messageBox, info menu, network packets...
+
+
+Another idea: The selectID dynamic allocation.
+
+Every objects has a selectID.
+
