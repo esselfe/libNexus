@@ -7,7 +7,8 @@ struct Prompt {
 	float cursorPosition;
 	float x, y;
 	float sizeX, sizeY;
-} prompt, *drawnPrompt;
+};
+extern struct Prompt prompt, *drawnPrompt;
 
 void initCommands (void);
 char *prompt2 (char *text);

@@ -1,7 +1,7 @@
 DST= lock.x
 
 INCLUDEDIR= -I. -I../../include
-CFLAGS= -D_GNU_SOURCE -Wall -Werror -std=c99 -pedantic
+CFLAGS= -D_GNU_SOURCE -Wall -std=c99 -pedantic
 LDFLAGS= -lpthread
 
 OBJCMD= gcc -c

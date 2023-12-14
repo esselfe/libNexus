@@ -42,6 +42,7 @@ int program_nice = 0,
 	program_ppid,
 	*program_argc;
 char **program_argv, *program_name, *program_pwd;
+struct ProgramVariables pv;
 
 void NLinit (int *argc, char **argv, char *winTitle) {
 	NLshowVersion ();
@@ -144,9 +145,9 @@ void exitNexus (int stateNum, int codeNum, const char *caller) {
 	NLsetState (stateNum, codeNum);
 	printf ("exitNexus(): Called from %s()\n", caller);
 	NLshowState ();
-	if (sensorsChipName != NULL) {
-		sensors_cleanup ();
-	}
+//	if (sensorsChipName != NULL) {
+//		sensors_cleanup ();
+//	}
 	exit (0);
 }
 

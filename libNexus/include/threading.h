@@ -5,10 +5,10 @@
 
 extern int timerTime, timerLastTime;
 
-pthread_t timerThread;
-pthread_attr_t timerThreadAttr;
+extern pthread_t timerThread;
+extern pthread_attr_t timerThreadAttr;
 
-pthread_t drawingThread;
+extern pthread_t drawingThread;
 
 void initThreading (void);
 void *timerThreadFunc (void *arg);

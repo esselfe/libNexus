@@ -32,7 +32,7 @@ char *dstname = NULL;
 char *srcname = NULL;
 char *cwd = NULL;
 unsigned long chestsize;
-pthread_t timerThread;
+pthread_t timerThread2;
 
 void cleanup (void) {
 	printf ("Done\n");
@@ -112,8 +112,8 @@ int main (int argc, char **argv) {
 	else {
 		if (enablenice) nice (prognice);
 		
-		pthread_create (&timerThread, NULL, timerThreadFunc, NULL);
-		pthread_detach (timerThread);
+		pthread_create (&timerThread2, NULL, timerThreadFunc, NULL);
+		pthread_detach (timerThread2);
 		
 		str = malloc (STRSIZE);
 		memset (str, 0, STRSIZE);

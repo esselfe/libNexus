@@ -17,7 +17,8 @@ struct Opt {
 	int id;
 	char *name;
 	struct Opt *prev, *next;
-} *optTree;
+};
+extern struct Opt *optTree;
 
 /* Main program options */
 /* Respective in the default config file */

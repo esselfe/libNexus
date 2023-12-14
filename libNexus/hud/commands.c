@@ -11,6 +11,7 @@
 #include "state.h"
 #include "tester.h"
 
+struct Prompt prompt, *drawnPrompt;
 int drawingPrompt = 0;
 
 void initCommands (void) {

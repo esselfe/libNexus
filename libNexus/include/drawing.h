@@ -11,7 +11,7 @@
 
 #include <X11/Xlib.h>
 
-extern Display *display;
+//extern Display *display;
 extern GC gc;
 
 extern int rendering;	// This flag is used in events.c :: selectObj to prevent
@@ -34,7 +34,8 @@ extern sMenu *drawnMenu;
 struct Func {
 	void (*func) (void);
 	int ab;
-} func;
+};
+extern struct Func func;
 
 //extern GLubyte fire[128];
 /*GLubyte fire[128] = { 0x00, 0x00, 0x00, 0x00, 
@@ -81,9 +82,9 @@ void PPdebugCountX (void);
 void render (void);
 void renderBrowser (void);
 
-int codeParse_RootDisplayListNode_ID;
-struct DisplayListNode *codeParse_RootDisplayListNode;
-void (*renderingModeFunc) (void);
+extern int codeParse_RootDisplayListNode_ID;
+extern struct DisplayListNode *codeParse_RootDisplayListNode;
+extern void (*renderingModeFunc) (void);
 void renderCodeParse (void);
 void renderEditor (void);
 //void renderFloor (void);	The floor is now a displayList

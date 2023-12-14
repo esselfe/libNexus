@@ -102,7 +102,8 @@ struct Entry {
 	char *label;
 	float x, y;
 	float color[4];
-} *curEntry, *curEntry2, *curSubentry, *hoveredEntry;
+};
+extern struct Entry *curEntry, *curEntry2, *curSubentry, *hoveredEntry;
 
 typedef struct Menu {
 	struct Menu *prev, *next;
@@ -115,7 +116,7 @@ typedef struct Menu {
 typedef struct MenuList {
 	sMenu *rootMenu, *lastMenu;
 } sMenuList;
-sMenuList mainMenuList;
+extern sMenuList mainMenuList;
 
 void initMenu (void);
 void initMenu2 (void);

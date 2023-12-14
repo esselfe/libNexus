@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <math.h>
+#include <pthread.h>
 #include <GL/glut.h>
 
 #include "camera.h"
@@ -11,6 +12,8 @@
 #include "state.h"
 
 Camera *cam = NULL;
+
+pthread_t camThread;
 								// x,y,z, 			lx,ly,lz,			step,angle,angleX
 float camMainmenuDefaultPos[9] = {0.0, 10.0, 50.0, 	0.0, 0.0, 0.0,	0.3,0.0,0.0};
 float camMainmenuLastPos[9] = {	0.0, 10.0, 50.0, 	0.0, 0.0, 0.0, 	0.3,0.0,0.0};

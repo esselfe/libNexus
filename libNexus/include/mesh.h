@@ -7,7 +7,7 @@
 //#endif
 #include "area.h"
 
-FILE *inputFile, *outputFile;
+extern FILE *inputFile, *outputFile;
 #define MESH_NAME_SIZE 64
 
 struct MeshNameList {
@@ -25,7 +25,8 @@ struct plSelectID {
 	int ID;
 	struct ptSelectID ptSID, *lastptSID;
 	struct plSelectID *prev, *next;
-} *lastplSID;
+};
+extern struct plSelectID *lastplSID;
 
 struct SPoint {
 	int ID;
@@ -56,7 +57,7 @@ typedef struct Mesh {
 	//struct plSelectID *plSID, *lastplSID;
 	Plane *plane, *lastPlane;
 } sMesh;
-sMesh *drawnMesh;
+extern sMesh *drawnMesh;
 
 typedef struct SScene {
 	int ID;
@@ -75,8 +76,9 @@ struct SWorld {
 	Scene *scene, *lastScene;
 	//Floor *firstFloor, *lastFloor;
 	struct SWorld *prev, *next;
-} *dWorld, *lastWorld;
+};
 typedef struct SWorld World;
+extern World *dWorld, *lastWorld;
 
 void initDefaultMesh (void);
 void initTruckMesh (void);

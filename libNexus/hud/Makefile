@@ -1,7 +1,7 @@
 
 INCLUDEDIR= ../include
 
-CFLAGS= -D_GNU_SOURCE -Wall
+CFLAGS= -D_GNU_SOURCE -Wall -fPIC
 LDFLAGS= -lc -lm -lglut
 
 OBJCMD= gcc -c -I../include

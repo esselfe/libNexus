@@ -1,6 +1,6 @@
 
-CFLAGS= -D_GNU_SOURCE -O3 -Wall -Werror -std=c99 -I../libNexus/include
-LDFLAGS= -lNexus
+CFLAGS= -D_GNU_SOURCE -O3 -Wall -std=c99 -I../libNexus/include
+LDFLAGS= -lNexus -lGLU -lGL
 INCLUDES= -I../libNexus
 
 default:

@@ -1,4 +1,4 @@
 
 default:
-	gcc -c -Wall -Werror helper-ncurses.c -o helper-ncurses.o
+	gcc -c -Wall helper-ncurses.c -o helper-ncurses.o
 

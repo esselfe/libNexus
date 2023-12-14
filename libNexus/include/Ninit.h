@@ -23,7 +23,8 @@ extern int exitProgram;
  //		only camera.c use it
 struct ProgramVariables {
 	Camera camera;
-} pv;
+};
+extern struct ProgramVariables pv;
 
 void NLinit (int *argc, char **argv, char *winTitle);
 

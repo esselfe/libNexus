@@ -36,12 +36,15 @@ void *HUD_FONT = GLUT_BITMAP_HELVETICA_12;
 
 char hudClockText[80];
 time_t hudClockTime;
+time_t mtime;
 struct tm *mtm;
 char *wday[7] = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
 char *mday[12] = { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
 
 char fpsText [10];
 short hudUpdateFPSDelay = 1;	// Delay in seconds, used in timerThreadFunc()
+
+struct sHudObject_EntryList *rootEntryList, *lastEntryList;
 
 /*GLUT_BITMAP_8_BY_13;
  GLUT_BITMAP_9_BY_15

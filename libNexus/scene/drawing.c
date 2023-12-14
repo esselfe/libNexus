@@ -26,7 +26,7 @@
 #include "state.h"
 
 #include <X11/Xlib.h>
-Display *display;
+//Display *display;
 GC gc;
 
 int rendering = 1;
@@ -35,7 +35,8 @@ short fps = 0;
 mbool needRedraw = 1;
 mbool lowRedraw = 0;
 int codeParse_RootDisplayListNode_ID;
-struct codeParse_RootDisplayListNode;
+//struct codeParse_RootDisplayListNode;
+struct DisplayListNode *codeParse_RootDisplayListNode;
 float codeDelta = 0.0;
 float delta = 0.0;
 float deltaStep = 0.01;
@@ -46,6 +47,9 @@ sMenu *drawnMenu;
 int drawSphere = 1;
 
 unsigned int frameSleepTime = 0;
+
+void (*renderingModeFunc) (void);
+struct Func func;
 
 void initDrawing (void) {
 	lastWorld = NULL;

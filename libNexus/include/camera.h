@@ -40,7 +40,7 @@ void storeCameraPosition (Camera *cam);		// save position according to 'mode'
 void restoreCameraPosition (Camera *cam);	// set idem
 
 #include <pthread.h>
-pthread_t camThread;
+extern pthread_t camThread;
 void *camThreadFunc (void *argp);
 
 #endif /* CAMERA_H */

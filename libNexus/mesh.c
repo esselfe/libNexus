@@ -14,6 +14,12 @@
 #include "messages.h"
 #include "libNexus.h"
 
+FILE *inputFile, *outputFile;
+sMesh *drawnMesh;
+struct plSelectID *lastplSID;
+World *dWorld, *lastWorld;
+struct SelectID *meshRootSelectID, *meshLastSelectID;
+
 struct MeshNameList *createMeshNameList (void) {
 	char *cwd = malloc (strlen ("mesh") + 1);
 	

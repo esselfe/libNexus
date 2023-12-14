@@ -1,8 +1,8 @@
 DST= nexus.x
 
 INCLUDEDIR= -I../libNexus/include -I./include
-CFLAGS= -D_GNU_SOURCE -O3 -Wall -Werror -std=c99 -pedantic
-LDFLAGS= -lc -lm -lglut -lsensors -lNexus
+CFLAGS= -D_GNU_SOURCE -O3 -Wall -std=c99 -pedantic
+LDFLAGS= -lc -lm -lGLU -lGL -lglut -lsensors -lNexus
 
 OBJCMD= gcc -c
 

@@ -22,6 +22,7 @@ int floorDisplayListNodeID;
 int floorDisplayListNodeID2;
 int menuEntryDisplayListNodeID;
 int sphereDisplayListNodeID;
+sDisplayListNode *rootDisplayListNode, *lastDisplayListNode;
 
 void initDisplayListTree (void) {
 	if (debug.displayList) printf ("initDisplayList(): started\n");

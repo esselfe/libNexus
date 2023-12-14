@@ -2,7 +2,7 @@ DST= objects.o
 
 INCLUDEDIR= ../include
 
-CFLAGS= -D_GNU_SOURCE -Wall -Werror -std=c99 -pedantic
+CFLAGS= -D_GNU_SOURCE -Wall -std=c99 -pedantic -fPIC
 LDFLAGS= -lc -lm -lglut
 
 OBJCMD= gcc -c

@@ -5,6 +5,7 @@
 #include <signal.h>
 #include <time.h>
 #include <errno.h>
+#include <pthread.h>
 #include <sensors/sensors.h>
 
 //#include "camera.h"
@@ -27,6 +28,9 @@ mbool once = 1;
 short hudUpdateFPSDelaycnt = 1;
 const int TMPSTRSIZE = 64;
 int program_ticks = 0;
+pthread_t timerThread;
+pthread_attr_t timerThreadAttr;
+pthread_t drawingThread;
 
 void initThreading (void) {
 	pthread_attr_init (&timerThreadAttr);
@@ -74,7 +78,7 @@ void *timerThreadFunc (void *arg) {
 		//	if (options.debug) { printf ("thr() "); fflush (stdout); }
 			//readProcFile ();
 			if (options.showSensors) {
-				sensors_get_feature (sensorsChipName3, 54, &CPUtemp);
+				//sensors_get_feature (sensorsChipName3, 54, &CPUtemp);
 				sprintf (CPUtempstr, "%s%.F%s", "CPU: ", CPUtemp, "*C");
 			}
 			if (mode == MODE_MEM)

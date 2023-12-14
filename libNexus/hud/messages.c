@@ -13,6 +13,7 @@ char *line, *line2, *text2;
 int linecnt = 0;
 float linespacing = 10.0;
 int msgPauseDrawing = 0;
+struct Message firstmsg, *curmsg, *lastmsg;
 
 void destroyLastMsg (void) {
 	curmsg = lastmsg;

@@ -4,8 +4,9 @@
 #include <string.h>
 #include <sys/statfs.h>
 #include <sys/sysinfo.h>
-#include <sensors/sensors.h>
+//#include <sensors/sensors.h>
 #include <linux/sched.h>
+#include <pthread.h>
 #include <GL/glut.h>
 
 #include <config.h>
@@ -20,9 +21,10 @@ char *tmpstr;// = "100.10*C";
 char *CPUtempstr;
 double CPUtemp;
 struct statfs *tmpstat;
-const sensors_chip_name *sensorsChipName = NULL, sensorsChipName2;
-sensors_chip_name sensorsChipName3;
-
+//const sensors_chip_name *sensorsChipName = NULL, sensorsChipName2;
+//sensors_chip_name sensorsChipName3;
+pthread_t sensThread;
+struct sysinfo sinfo;
 
 struct task_struct *task;
 
@@ -47,31 +49,31 @@ void initOSData (void) {/*
 	}
 	else {
 		//printf ("1\n");
-		sensors_init (file);
+//		sensors_init (file);
 		int chipcnt = 0;
 //		while (1) {
 			//printf ("2\n");
-			sensorsChipName = sensors_get_detected_chips (&chipcnt);
-			if (sensorsChipName == 0) {
-				printf ("nexus:initData():sensors:%d Cannot detect chip\n", __LINE__);
-				return;
-			}
+//			sensorsChipName = sensors_get_detected_chips (&chipcnt);
+//			if (sensorsChipName == 0) {
+//				printf ("nexus:initData():sensors:%d Cannot detect chip\n", __LINE__);
+//				return;
+//			}
 //			sensorsChipName2.prefix = sensorsChipName->prefix;
 //			sensorsChipName2.bus = sensorsChipName->bus;
 //			sensorsChipName2.addr = sensorsChipName->addr;
 //			sensorsChipName2.busname = sensorsChipName->busname;
 //	printf ("\t3\n");
-			sensorsChipName3.prefix = sensorsChipName->prefix;
+			//sensorsChipName3.prefix = sensorsChipName->prefix;
 //	printf ("\t4\n");
-			sensorsChipName3.bus = sensorsChipName->bus;
+			//sensorsChipName3.bus = sensorsChipName->bus;
 //	printf ("\t5\n");
-			sensorsChipName3.addr = sensorsChipName->addr;
+			//sensorsChipName3.addr = sensorsChipName->addr;
 //	printf ("\t6\n");
-			sensorsChipName3.busname = sensorsChipName->busname;
+			//sensorsChipName3.busname = sensorsChipName->busname;
 //	printf ("\t7\n");
-		sensors_get_feature (sensorsChipName3, 54, &CPUtemp);
+		//sensors_get_feature (sensorsChipName3, 54, &CPUtemp);
 //	printf ("\t8\n");
-		sprintf (CPUtempstr, "%s%.0F%s", "CPU: ", CPUtemp, "°C");
+		//sprintf (CPUtempstr, "%s%.0F%s", "CPU: ", CPUtemp, "°C");
 //	printf ("\t9\n");
 	}
 	//printf ("3\n");
@@ -226,7 +228,7 @@ void *sensThreadFunc (void *argp) {
 			if (entry != NULL) entry->enabled = 0;
 			return NULL;
 		}
-		updateSensorsInfo ();
+//		updateSensorsInfo ();
 		sleep (1);
 	}
 	

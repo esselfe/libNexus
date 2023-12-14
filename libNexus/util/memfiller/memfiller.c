@@ -94,6 +94,7 @@ int memfill (int memtype, char *fileLocation) {
 }
 
 void *memfillThreadFunc (void *argp) {
+	struct sysinfo sinfo;
 	sysinfo (&sinfo);
 	printf ("memfillerThreadFunc(): started\n");
 	printf ("\tTotal RAM: \t%lu\n", sinfo.totalram);

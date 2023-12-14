@@ -23,7 +23,7 @@ typedef struct DisplayListNode {
 	char *name;
 	float x, y, z;
 } sDisplayListNode;
-sDisplayListNode *rootDisplayListNode, *lastDisplayListNode;
+extern sDisplayListNode *rootDisplayListNode, *lastDisplayListNode;
 
 void initDisplayListTree (void);
 int displayListNodeID_byName (char *name);

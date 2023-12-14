@@ -5,7 +5,9 @@ struct Message {
 	char *text;
 	short rank;
 	struct Message *prev, *next;
-} firstmsg, *curmsg, *lastmsg;
+};
+extern struct Message firstmsg, *curmsg, *lastmsg;
+
 extern const short MESSAGESIZE;
 extern char *msgbuf;	// Mostly for addMsg(), for special sprintf() formatting needs, used as needed
 extern char *msgbuf2;	// Idem, but used by events and threads... may change anytime

@@ -1,6 +1,6 @@
 
 INCLUDES= -I../include
-CFLAGS= -D_GNU_SOURCE -Wall -Werror -std=c99 -pedantic
+CFLAGS= -D_GNU_SOURCE -Wall -std=c99 -pedantic -fPIC
 LDFLAGS= 
 
 OBJCMD= gcc -c

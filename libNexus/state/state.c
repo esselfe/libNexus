@@ -13,6 +13,7 @@
 int mode = MODE_MAINMENU;
 int numpadMode = MODE_CAMERA;
 int stateStrSize = 64;
+struct State state;
 
 const char *modeStringByModeID (int modeID) {
 	switch (modeID) {

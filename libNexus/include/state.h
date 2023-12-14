@@ -6,12 +6,13 @@
 // ***************
 // Internal state and/or state flags, thought for debugging purposes
 // ***************
-struct {
+struct State {
 	int stateNum;
 	int codeNum;
 	char *stateStr;
 	char *codeStr;
-} state;
+};
+extern struct State state;
 
 // States
 #define STATE_IDLE			0x00

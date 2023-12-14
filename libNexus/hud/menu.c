@@ -28,6 +28,8 @@ int maxSubentrySizeX = 0;
 int maxEntryEditorSizeX = 0;
 int maxSubentryEditorSizeX = 0;
 int stateInSubmenu = 0;
+struct SelectID *menuRootSelectID, *menuLastSelectID;
+sMenuList mainMenuList;
 
 void initMenu2 (void) {
 	printf ("initMenu2(): started\n");

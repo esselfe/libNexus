@@ -1,5 +1,5 @@
-CFLAGS= -Wall -Werror -D_GNU_SOURCE -std=c99
-LDFLAGS= -lNexus
+CFLAGS= -Wall -D_GNU_SOURCE -std=c99
+LDFLAGS= -lNexus -lGLU -lGL
 INCLUDES= -I ../libNexus/include
 
 default:

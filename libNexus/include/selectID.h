@@ -5,7 +5,8 @@ struct SelectID {
 	struct SelectID *prev, *next;
 	int type;	// SID_TYPE_* include/Ntype.h
 	int id;
-} *meshRootSelectID, *meshLastSelectID, 
+};
+extern struct SelectID *meshRootSelectID, *meshLastSelectID, 
 *menuRootSelectID, *menuLastSelectID;
 
 void initSelectID (void);

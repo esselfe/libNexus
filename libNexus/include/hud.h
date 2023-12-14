@@ -14,8 +14,8 @@ extern mbool hudTextOnceColorFlag;	// Used
 extern void *HUD_FONT;
 
 // stuff for the clock in the lower-right corner of the screen
-time_t mtime;
-struct tm *mtm;
+extern time_t mtime;
+extern struct tm *mtm;
 extern float bottomTextBackgroundColor[4];
 extern char hudClockText [80];
 extern time_t hudClockTime;
@@ -40,7 +40,8 @@ struct sHudObject_EntryList {
 	Color color;	// particular user settings for distinctions
 	char *label;
 	struct sHudObject_Entry *rootEntry, *lastEntry;
-} *rootEntryList, *lastEntryList;
+};
+extern struct sHudObject_EntryList *rootEntryList, *lastEntryList;
 
 struct Button {
 	int ID;
